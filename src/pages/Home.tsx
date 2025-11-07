@@ -195,7 +195,7 @@ export default function Home() {
 
             <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-12 text-center">
               <img
-                src="/Gemini_Generated_Image_e8g9rae8g9rae8g9 (2).png"
+                src="/eria_logo.jpeg"
                 alt="Ilustração"
                 className="w-full h-auto rounded-xl mb-6"
               />
