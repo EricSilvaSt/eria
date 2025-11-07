@@ -20,7 +20,7 @@ export default function Header() {
         <div className="flex justify-between items-center py-4">
           <Link to="/" className="flex items-center space-x-2">
             <img
-              src="/WhatsApp Image 2025-10-24 at 14.07.43.jpeg"
+              src="/eria_logo.jpeg"
               alt="ER.IA Logo"
               className="h-40 w-40 object-contain"
             />
