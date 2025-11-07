@@ -1,9 +1,11 @@
-import { Phone, MessageCircle, Globe, Settings, Bot } from 'lucide-react';
+import { Phone, MessageCircle, Globe, Settings, Bot, Cookie, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useCookieConsent } from '../contexts/CookieConsentContext';
 
 export default function Footer() {
   const whatsappNumber = "71981526218";
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
+  const { openSettings } = useCookieConsent();
 
   return (
     <footer className="bg-gray-900 text-white py-12">
@@ -66,8 +68,28 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 ER.IA. Todos os direitos reservados.</p>
+        <div className="border-t border-gray-800 mt-8 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-400 text-center md:text-left">
+              &copy; 2025 ER.IA. Todos os direitos reservados.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 text-sm">
+              <Link
+                to="/politica-cookies"
+                className="text-gray-400 hover:text-white transition-colors flex items-center space-x-1"
+              >
+                <Cookie className="h-4 w-4" />
+                <span>Política de Cookies</span>
+              </Link>
+              <button
+                onClick={openSettings}
+                className="text-gray-400 hover:text-white transition-colors flex items-center space-x-1"
+              >
+                <Shield className="h-4 w-4" />
+                <span>Gerenciar Cookies</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
