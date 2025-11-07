@@ -6,6 +6,8 @@ export const saveConsentToDatabase = async (
   consentId: string,
   preferences: CookiePreferences
 ): Promise<void> => {
+  if (!supabase) return;
+
   try {
     const ipHash = await getIpHash();
 
@@ -32,6 +34,8 @@ export const saveConsentToDatabase = async (
 };
 
 export const trackPageView = async (visitorData: VisitorData): Promise<void> => {
+  if (!supabase) return;
+
   try {
     const { error } = await supabase
       .from('visitor_analytics')

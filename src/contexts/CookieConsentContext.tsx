@@ -72,7 +72,7 @@ export const CookieConsentProvider = ({ children }: CookieConsentProviderProps) 
     });
   };
 
-  const acceptAll = async () => {
+  const acceptAll = () => {
     const allAccepted = getAllAcceptedPreferences();
     const consent = saveConsent(allAccepted);
 
@@ -81,11 +81,11 @@ export const CookieConsentProvider = ({ children }: CookieConsentProviderProps) 
     setShowBanner(false);
     setShowSettings(false);
 
-    await saveConsentToDatabase(consent.consentId, allAccepted);
-    await trackVisit();
+    saveConsentToDatabase(consent.consentId, allAccepted).catch(() => {});
+    trackVisit().catch(() => {});
   };
 
-  const rejectAll = async () => {
+  const rejectAll = () => {
     const defaultPrefs = getDefaultPreferences();
     const consent = saveConsent(defaultPrefs);
 
@@ -94,10 +94,10 @@ export const CookieConsentProvider = ({ children }: CookieConsentProviderProps) 
     setShowBanner(false);
     setShowSettings(false);
 
-    await saveConsentToDatabase(consent.consentId, defaultPrefs);
+    saveConsentToDatabase(consent.consentId, defaultPrefs).catch(() => {});
   };
 
-  const savePreferences = async (prefs: CookiePreferences) => {
+  const savePreferences = (prefs: CookiePreferences) => {
     const consent = saveConsent(prefs);
 
     setPreferences(prefs);
@@ -105,10 +105,10 @@ export const CookieConsentProvider = ({ children }: CookieConsentProviderProps) 
     setShowBanner(false);
     setShowSettings(false);
 
-    await saveConsentToDatabase(consent.consentId, prefs);
+    saveConsentToDatabase(consent.consentId, prefs).catch(() => {});
 
     if (prefs.analytics) {
-      await trackVisit();
+      trackVisit().catch(() => {});
     }
   };
 
