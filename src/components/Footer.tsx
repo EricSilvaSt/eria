@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <img
-                src="/WhatsApp Image 2025-10-24 at 14.07.43.jpeg"
+                src="/eria_logo.jpeg"
                 alt="ER.IA Logo"
                 className="h-40 w-40 object-contain mix-blend-screen"
               />
