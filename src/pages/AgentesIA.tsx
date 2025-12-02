@@ -1,4 +1,5 @@
 import { Bot, Zap, TrendingUp, Users, CheckCircle, MessageCircle, ArrowRight, Clock, Target, Brain, ShieldCheck } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export default function AgentesIA() {
   const whatsappNumber = "71981526218";
@@ -136,6 +137,11 @@ export default function AgentesIA() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Agentes de IA para WhatsApp em Salvador | ER.IA - Automação de Vendas"
+        description="Agentes de IA para WhatsApp que automatizam atendimento e vendas 24/7 em Salvador. Qualificação de leads, follow-up inteligente e aumento de 300% nas conversões. Chatbot personalizado para seu negócio."
+        keywords="agentes de IA Salvador, chatbot WhatsApp, automação de vendas, IA conversacional Bahia, atendimento automatizado, bot WhatsApp Business"
+      />
       <section className="bg-gradient-to-br from-orange-50 via-white to-orange-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">

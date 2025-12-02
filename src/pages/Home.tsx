@@ -1,5 +1,6 @@
 import { Zap, Shield, Rocket, MessageCircle, ArrowRight, Globe, Settings, Bot, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 export default function Home() {
   const whatsappNumber = "71981526218";
@@ -31,6 +32,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="ER.IA - Desenvolvimento Web, Sistemas e Agentes de IA | Salvador, Bahia"
+        description="ER.IA desenvolve sites profissionais, e-commerce, sistemas personalizados e agentes de IA para WhatsApp em Salvador, Bahia. Automação, tecnologia de ponta e suporte especializado para seu negócio."
+        keywords="desenvolvimento web Salvador, criação de sites Bahia, e-commerce Salvador, sistemas personalizados, agentes de IA, automação WhatsApp"
+      />
       <section className="bg-gradient-to-br from-blue-50 via-white to-green-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">

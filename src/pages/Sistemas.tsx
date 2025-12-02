@@ -1,4 +1,5 @@
 import { Settings, Database, Cloud, Lock, BarChart3, Workflow, CheckCircle, MessageCircle, ArrowRight, Zap, Gauge } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export default function Sistemas() {
   const whatsappNumber = "71981526218";
@@ -137,6 +138,11 @@ export default function Sistemas() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Desenvolvimento de Sistemas Personalizados em Salvador | ER.IA - ERP, CRM"
+        description="Desenvolvimento de sistemas personalizados, ERP, CRM e automação de processos em Salvador, Bahia. Soluções sob medida para otimizar sua operação, integrar setores e aumentar produtividade."
+        keywords="desenvolvimento de sistemas Salvador, ERP Salvador, CRM Bahia, software personalizado, automação de processos, sistema de gestão Salvador"
+      />
       <section className="bg-gradient-to-br from-green-50 via-white to-green-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">

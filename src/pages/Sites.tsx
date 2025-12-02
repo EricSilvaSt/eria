@@ -1,4 +1,5 @@
 import { Globe, Smartphone, Search, ShoppingCart, Palette, Code, CheckCircle, MessageCircle, ArrowRight, Zap } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export default function Sites() {
   const whatsappNumber = "71981526218";
@@ -110,6 +111,11 @@ export default function Sites() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Criação de Sites e E-commerce em Salvador | ER.IA - Sites Profissionais"
+        description="Desenvolvimento de sites profissionais, landing pages de alta conversão e e-commerce completo em Salvador, Bahia. Design moderno, SEO otimizado e responsivo. Transforme sua presença digital."
+        keywords="criação de sites Salvador, desenvolvimento web Bahia, e-commerce Salvador, landing page, site profissional, loja virtual, web design Salvador"
+      />
       <section className="bg-gradient-to-br from-blue-50 via-white to-blue-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
