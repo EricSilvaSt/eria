@@ -1,4 +1,4 @@
-import { MessageCircle, Target, Eye, Heart, CheckCircle, Zap, ExternalLink } from 'lucide-react';
+import { MessageCircle, Target, Eye, Heart, CheckCircle, Zap, ExternalLink, Shield } from 'lucide-react';
 import SEO from '../components/SEO';
 
 export default function Sobre() {
@@ -10,7 +10,7 @@ export default function Sobre() {
       nome: 'Eric Silva',
       cargo: 'CEO & CTO',
       subtitulo: 'Founder',
-      descricao: 'Visionário em tecnologia e automação, lidera a direção estratégica e técnica da ER.IA.',
+      descricao: 'Especialista em tecnologia, automação e ferramentas de Inteligência Artificial, lidera a direção estratégica e técnica da ER.IA.',
       link: 'https://eric.eria.tec.br',
       foto: '/eric.png'
     },
@@ -49,6 +49,11 @@ export default function Sobre() {
       icon: Eye,
       titulo: 'Resultados Reais',
       descricao: 'Foco total em impacto, performance e evolução mensurável.'
+    },
+    {
+      icon: Shield,
+      titulo: 'Liberdade com Responsabilidade',
+      descricao: 'Autonomia para inovar com compromisso e integridade em todas as ações.'
     }
   ];
 
@@ -142,7 +147,7 @@ export default function Sobre() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -173,7 +178,7 @@ export default function Sobre() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
