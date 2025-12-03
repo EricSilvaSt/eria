@@ -6,6 +6,18 @@
   .dark {
     color-scheme: dark;
   }
+
+  .dark section:not([class*="gradient"]) {
+    @apply text-gray-100;
+  }
+
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    @apply text-white;
+  }
+
+  .dark p, .dark span:not([class*="text-"]) {
+    @apply text-gray-300;
+  }
 }
 
 @keyframes slide-up {

@@ -136,7 +136,7 @@ export default function AgentesIA() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <SEO
         title="Agentes de IA para WhatsApp em Salvador | ER.IA - Automação de Vendas"
         description="Agentes de IA para WhatsApp que automatizam atendimento e vendas 24/7 em Salvador. Qualificação de leads, follow-up inteligente e aumento de 300% nas conversões. Chatbot personalizado para seu negócio."
