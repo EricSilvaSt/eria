@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from './contexts/ThemeContext';
 import { CookieConsentProvider } from './contexts/CookieConsentContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -20,28 +21,30 @@ import FormEcommerce from './pages/FormEcommerce';
 function App() {
   return (
     <Router>
-      <CookieConsentProvider>
-        <ScrollToTop />
-        <div className="min-h-screen bg-white">
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/sobre" element={<Sobre />} />
-            <Route path="/sites" element={<Sites />} />
-            <Route path="/sistemas" element={<Sistemas />} />
-            <Route path="/agentes-ia" element={<AgentesIA />} />
-            <Route path="/politica-cookies" element={<CookiePolicy />} />
-            <Route path="/politica-privacidade" element={<PrivacyPolicy />} />
-            <Route path="/form-agentes-ia" element={<FormAgentesIA />} />
-            <Route path="/form-sites-e-lp" element={<FormSites />} />
-            <Route path="/form-sistemas-personalizados" element={<FormSistemas />} />
-            <Route path="/form-ecommerces" element={<FormEcommerce />} />
-          </Routes>
-          <Footer />
-          <CookieBanner />
-          <CookieSettings />
-        </div>
-      </CookieConsentProvider>
+      <ThemeProvider>
+        <CookieConsentProvider>
+          <ScrollToTop />
+          <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
+            <Header />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/sobre" element={<Sobre />} />
+              <Route path="/sites" element={<Sites />} />
+              <Route path="/sistemas" element={<Sistemas />} />
+              <Route path="/agentes-ia" element={<AgentesIA />} />
+              <Route path="/politica-cookies" element={<CookiePolicy />} />
+              <Route path="/politica-privacidade" element={<PrivacyPolicy />} />
+              <Route path="/form-agentes-ia" element={<FormAgentesIA />} />
+              <Route path="/form-sites-e-lp" element={<FormSites />} />
+              <Route path="/form-sistemas-personalizados" element={<FormSistemas />} />
+              <Route path="/form-ecommerces" element={<FormEcommerce />} />
+            </Routes>
+            <Footer />
+            <CookieBanner />
+            <CookieSettings />
+          </div>
+        </CookieConsentProvider>
+      </ThemeProvider>
     </Router>
   );
 }

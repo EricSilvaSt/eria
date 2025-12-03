@@ -98,21 +98,21 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <SEO
         title="ER.IA - Desenvolvimento Web, Sistemas e Agentes de IA | Salvador, Bahia"
         description="ER.IA desenvolve sites profissionais, e-commerce, sistemas personalizados e agentes de IA para WhatsApp em Salvador, Bahia. Automação, tecnologia de ponta e suporte especializado para seu negócio."
         keywords="desenvolvimento web Salvador, criação de sites Bahia, e-commerce Salvador, sistemas personalizados, agentes de IA, automação WhatsApp"
         schema={combinedSchema}
       />
-      <section className="bg-gradient-to-br from-blue-50 via-white to-green-50 py-20">
+      <section className="bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-20 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
+            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6">
               Transforme seu Negócio
-              <span className="text-blue-600"> com Tecnologia</span>
+              <span className="text-blue-600 dark:text-blue-400"> com Tecnologia</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-4xl mx-auto">
               Soluções completas em desenvolvimento web, sistemas personalizados e automação com inteligência artificial.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -137,13 +137,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="servicos" className="py-20 bg-white">
+      <section id="servicos" className="py-20 bg-white dark:bg-gray-800 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Nossos Serviços
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Soluções completas para levar seu negócio ao próximo nível
             </p>
           </div>
@@ -158,12 +158,12 @@ export default function Home() {
               };
 
               return (
-                <div key={index} className="bg-white border-2 border-gray-100 rounded-2xl p-8 hover:shadow-2xl hover:border-gray-200 transition-all duration-300 transform hover:-translate-y-2">
+                <div key={index} className="bg-white dark:bg-gray-700 border-2 border-gray-100 dark:border-gray-600 rounded-2xl p-8 hover:shadow-2xl hover:border-gray-200 dark:hover:border-gray-500 transition-all duration-300 transform hover:-translate-y-2">
                   <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${colorClasses[service.color as keyof typeof colorClasses]}`}>
                     <IconComponent className="h-8 w-8" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{service.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">{service.description}</p>
                   <Link
                     to={service.link}
                     className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-semibold transition-colors"
@@ -178,13 +178,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Por que escolher a ER.IA?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Diferenciais que fazem toda a diferença
             </p>
           </div>
