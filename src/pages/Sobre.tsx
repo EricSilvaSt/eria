@@ -1,4 +1,4 @@
-import { MessageCircle, Target, Eye, Heart, CheckCircle, Zap, User, ExternalLink } from 'lucide-react';
+import { MessageCircle, Target, Eye, Heart, CheckCircle, Zap, ExternalLink } from 'lucide-react';
 import SEO from '../components/SEO';
 
 export default function Sobre() {
@@ -11,14 +11,16 @@ export default function Sobre() {
       cargo: 'CEO & CTO',
       subtitulo: 'Founder',
       descricao: 'Visionário em tecnologia e automação, lidera a direção estratégica e técnica da ER.IA.',
-      link: 'https://eric.eria.tec.br'
+      link: 'https://eric.eria.tec.br',
+      foto: '/eric.png'
     },
     {
       nome: 'Iago Silva',
       cargo: 'CRO',
       subtitulo: 'Founder',
       descricao: 'Especialista em crescimento e relacionamento com clientes, impulsiona a expansão da empresa.',
-      link: 'https://iago.eria.tec.br'
+      link: 'https://iago.eria.tec.br',
+      foto: '/iago.jpg'
     }
   ];
 
@@ -188,10 +190,12 @@ export default function Sobre() {
                 key={index}
                 className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
               >
-                <div className="bg-gradient-to-br from-blue-600 to-green-600 h-48 flex items-center justify-center">
-                  <div className="bg-white w-32 h-32 rounded-full flex items-center justify-center">
-                    <User className="h-20 w-20 text-gray-400" />
-                  </div>
+                <div className="bg-gradient-to-br from-blue-600 to-green-600 h-64 flex items-center justify-center p-8">
+                  <img
+                    src={fundador.foto}
+                    alt={fundador.nome}
+                    className="w-48 h-48 rounded-full object-cover border-4 border-white shadow-xl"
+                  />
                 </div>
                 <div className="p-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-1">{fundador.nome}</h3>
