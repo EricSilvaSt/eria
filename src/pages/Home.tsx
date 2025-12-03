@@ -166,7 +166,7 @@ export default function Home() {
                   <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">{service.description}</p>
                   <Link
                     to={service.link}
-                    className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-semibold transition-colors"
+                    className="inline-flex items-center space-x-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold transition-colors"
                   >
                     <span>Saiba mais</span>
                     <ArrowRight className="h-5 w-5" />
@@ -190,32 +190,32 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-8 text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Zap className="h-8 w-8 text-blue-600" />
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-blue-100 dark:bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Zap className="h-8 w-8 text-blue-600 dark:text-blue-400" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Entrega Rápida</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Entrega Rápida</h3>
+              <p className="text-gray-600 dark:text-gray-300">
                 Processos ágeis e eficientes para entregar seu projeto no prazo sem comprometer a qualidade.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Shield className="h-8 w-8 text-green-600" />
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-green-100 dark:bg-green-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Shield className="h-8 w-8 text-green-600 dark:text-green-400" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Segurança Total</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Segurança Total</h3>
+              <p className="text-gray-600 dark:text-gray-300">
                 Todas as soluções seguem as melhores práticas de segurança e proteção de dados.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Rocket className="h-8 w-8 text-orange-600" />
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-orange-100 dark:bg-orange-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Rocket className="h-8 w-8 text-orange-600 dark:text-orange-400" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Tecnologia de Ponta</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Tecnologia de Ponta</h3>
+              <p className="text-gray-600 dark:text-gray-300">
                 Utilizamos as tecnologias mais modernas e eficientes do mercado.
               </p>
             </div>
@@ -223,45 +223,45 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-800 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
                 Processo Transparente e Eficiente
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
                 Do planejamento à entrega, você acompanha cada etapa do desenvolvimento do seu projeto.
               </p>
 
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-blue-100 p-3 rounded-lg">
-                    <CheckCircle className="h-6 w-6 text-blue-600" />
+                  <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-lg">
+                    <CheckCircle className="h-6 w-6 text-blue-600 dark:text-blue-400" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Análise e Planejamento</h3>
-                    <p className="text-gray-600">Entendemos suas necessidades e criamos a melhor estratégia.</p>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Análise e Planejamento</h3>
+                    <p className="text-gray-600 dark:text-gray-300">Entendemos suas necessidades e criamos a melhor estratégia.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="bg-green-100 p-3 rounded-lg">
-                    <CheckCircle className="h-6 w-6 text-green-600" />
+                  <div className="bg-green-100 dark:bg-green-900 p-3 rounded-lg">
+                    <CheckCircle className="h-6 w-6 text-green-600 dark:text-green-400" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Desenvolvimento</h3>
-                    <p className="text-gray-600">Criamos sua solução com as melhores tecnologias do mercado.</p>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Desenvolvimento</h3>
+                    <p className="text-gray-600 dark:text-gray-300">Criamos sua solução com as melhores tecnologias do mercado.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="bg-orange-100 p-3 rounded-lg">
-                    <CheckCircle className="h-6 w-6 text-orange-600" />
+                  <div className="bg-orange-100 dark:bg-orange-900 p-3 rounded-lg">
+                    <CheckCircle className="h-6 w-6 text-orange-600 dark:text-orange-400" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Entrega e Suporte</h3>
-                    <p className="text-gray-600">Lançamos seu projeto e oferecemos suporte contínuo.</p>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Entrega e Suporte</h3>
+                    <p className="text-gray-600 dark:text-gray-300">Lançamos seu projeto e oferecemos suporte contínuo.</p>
                   </div>
                 </div>
               </div>
@@ -273,10 +273,10 @@ export default function Home() {
                 alt="Ilustração"
                 className="w-full h-auto rounded-xl mb-6"
               />
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                 Pronto para começar?
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
                 Entre em contato e receba uma proposta personalizada para seu projeto.
               </p>
               <a

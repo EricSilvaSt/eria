@@ -8,7 +8,7 @@ export default function Footer() {
   const { openSettings } = useCookieConsent();
 
   return (
-    <footer className="bg-white text-gray-900 py-12 border-t border-gray-200">
+    <footer className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 py-12 border-t border-gray-200 dark:border-gray-700 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-5 gap-8">
           <div className="col-span-2">
@@ -19,28 +19,28 @@ export default function Footer() {
                 className="h-40 w-40 object-contain"
               />
             </div>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
               Soluções completas em tecnologia. Sites, sistemas e agentes de IA para transformar seu negócio.
             </p>
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-gray-900">Serviços</h4>
-            <ul className="space-y-2 text-gray-600">
+            <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Serviços</h4>
+            <ul className="space-y-2 text-gray-600 dark:text-gray-300">
               <li>
-                <Link to="/sites" className="hover:text-blue-600 transition-colors flex items-center space-x-2">
+                <Link to="/sites" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center space-x-2">
                   <Globe className="h-4 w-4" />
                   <span>Sites & E-commerce</span>
                 </Link>
               </li>
               <li>
-                <Link to="/sistemas" className="hover:text-blue-600 transition-colors flex items-center space-x-2">
+                <Link to="/sistemas" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center space-x-2">
                   <Settings className="h-4 w-4" />
                   <span>Sistemas</span>
                 </Link>
               </li>
               <li>
-                <Link to="/agentes-ia" className="hover:text-blue-600 transition-colors flex items-center space-x-2">
+                <Link to="/agentes-ia" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center space-x-2">
                   <Bot className="h-4 w-4" />
                   <span>Agentes de IA</span>
                 </Link>
@@ -49,28 +49,28 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-gray-900">Solicitar Orçamento</h4>
-            <ul className="space-y-2 text-gray-600 text-sm">
+            <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Solicitar Orçamento</h4>
+            <ul className="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
               <li>
-                <Link to="/form-agentes-ia" className="hover:text-blue-600 transition-colors flex items-center space-x-2">
+                <Link to="/form-agentes-ia" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center space-x-2">
                   <FileEdit className="h-4 w-4" />
                   <span>Agentes de IA</span>
                 </Link>
               </li>
               <li>
-                <Link to="/form-sites-e-lp" className="hover:text-blue-600 transition-colors flex items-center space-x-2">
+                <Link to="/form-sites-e-lp" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center space-x-2">
                   <FileEdit className="h-4 w-4" />
                   <span>Sites / Landing Page</span>
                 </Link>
               </li>
               <li>
-                <Link to="/form-sistemas-personalizados" className="hover:text-blue-600 transition-colors flex items-center space-x-2">
+                <Link to="/form-sistemas-personalizados" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center space-x-2">
                   <FileEdit className="h-4 w-4" />
                   <span>Sistemas</span>
                 </Link>
               </li>
               <li>
-                <Link to="/form-ecommerces" className="hover:text-blue-600 transition-colors flex items-center space-x-2">
+                <Link to="/form-ecommerces" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center space-x-2">
                   <FileEdit className="h-4 w-4" />
                   <span>E-commerce</span>
                 </Link>
@@ -79,15 +79,15 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-gray-900">Contato</h4>
-            <div className="space-y-3 text-gray-600 text-sm">
+            <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Contato</h4>
+            <div className="space-y-3 text-gray-600 dark:text-gray-300 text-sm">
               <div className="flex items-start space-x-2">
                 <Phone className="h-4 w-4 mt-1 flex-shrink-0" />
                 <span>{whatsappNumber}</span>
               </div>
               <div className="flex items-start space-x-2">
                 <Mail className="h-4 w-4 mt-1 flex-shrink-0" />
-                <a href="mailto:adm@eria.tec.br" className="hover:text-blue-600 transition-colors">
+                <a href="mailto:adm@eria.tec.br" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   adm@eria.tec.br
                 </a>
               </div>
@@ -104,29 +104,29 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-200 mt-8 pt-8">
+        <div className="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-600 text-center md:text-left">
+            <p className="text-gray-600 dark:text-gray-300 text-center md:text-left">
               &copy; 2025 ER.IA. Todos os direitos reservados.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               <Link
                 to="/politica-privacidade"
-                className="text-gray-600 hover:text-blue-600 transition-colors flex items-center space-x-1"
+                className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center space-x-1"
               >
                 <FileText className="h-4 w-4" />
                 <span>Política de Privacidade</span>
               </Link>
               <Link
                 to="/politica-cookies"
-                className="text-gray-600 hover:text-blue-600 transition-colors flex items-center space-x-1"
+                className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center space-x-1"
               >
                 <Cookie className="h-4 w-4" />
                 <span>Política de Cookies</span>
               </Link>
               <button
                 onClick={openSettings}
-                className="text-gray-600 hover:text-blue-600 transition-colors flex items-center space-x-1"
+                className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center space-x-1"
               >
                 <Shield className="h-4 w-4" />
                 <span>Gerenciar Cookies</span>
