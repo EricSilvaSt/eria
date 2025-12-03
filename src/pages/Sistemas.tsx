@@ -295,9 +295,9 @@ export default function Sistemas() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-green-600 to-blue-600 rounded-3xl p-12 text-center shadow-2xl">
+          <div className="bg-gradient-to-br from-green-600 to-blue-600 dark:from-green-700 dark:to-blue-700 rounded-3xl p-12 text-center shadow-2xl">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Transforme sua Operação com um Sistema Personalizado
             </h2>

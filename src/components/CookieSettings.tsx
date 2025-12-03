@@ -72,20 +72,20 @@ export default function CookieSettings() {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm">
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col">
-        <div className="p-6 border-b border-gray-200 flex items-center justify-between">
-          <h2 className="text-2xl font-bold text-gray-900">Configurações de Cookies</h2>
+      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col transition-colors duration-200">
+        <div className="p-6 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Configurações de Cookies</h2>
           <button
             onClick={closeSettings}
-            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
             aria-label="Fechar"
           >
-            <X className="h-6 w-6 text-gray-600" />
+            <X className="h-6 w-6 text-gray-600 dark:text-gray-300" />
           </button>
         </div>
 
         <div className="flex-1 overflow-y-auto p-6">
-          <p className="text-gray-600 mb-6 leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
             Personalize suas preferências de cookies. Você pode ativar ou desativar categorias
             específicas de cookies de acordo com suas necessidades. Os cookies essenciais são
             sempre necessários para o funcionamento do site.
@@ -99,23 +99,23 @@ export default function CookieSettings() {
               return (
                 <div
                   key={key}
-                  className="bg-gray-50 rounded-xl p-5 border-2 border-gray-100 hover:border-gray-200 transition-colors"
+                  className="bg-gray-50 dark:bg-gray-700 rounded-xl p-5 border-2 border-gray-100 dark:border-gray-600 hover:border-gray-200 dark:hover:border-gray-500 transition-colors"
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center space-x-3 flex-1">
-                      <div className={`p-2 rounded-lg ${isEnabled ? 'bg-blue-100' : 'bg-gray-200'}`}>
-                        <Icon className={`h-5 w-5 ${isEnabled ? 'text-blue-600' : 'text-gray-500'}`} />
+                      <div className={`p-2 rounded-lg ${isEnabled ? 'bg-blue-100 dark:bg-blue-900' : 'bg-gray-200 dark:bg-gray-600'}`}>
+                        <Icon className={`h-5 w-5 ${isEnabled ? 'text-blue-600 dark:text-blue-400' : 'text-gray-500 dark:text-gray-400'}`} />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-bold text-gray-900 mb-1">
+                        <h3 className="font-bold text-gray-900 dark:text-white mb-1">
                           {category.name}
                           {category.required && (
-                            <span className="ml-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full font-semibold">
+                            <span className="ml-2 text-xs bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-1 rounded-full font-semibold">
                               Obrigatório
                             </span>
                           )}
                         </h3>
-                        <p className="text-sm text-gray-600">{category.description}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">{category.description}</p>
                       </div>
                     </div>
 
@@ -135,12 +135,12 @@ export default function CookieSettings() {
                   </div>
 
                   <div className="mt-3 pl-10">
-                    <p className="text-xs text-gray-500 font-semibold mb-1">Exemplos:</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 font-semibold mb-1">Exemplos:</p>
                     <div className="flex flex-wrap gap-2">
                       {category.examples.map((example, idx) => (
                         <span
                           key={idx}
-                          className="text-xs bg-white text-gray-600 px-2 py-1 rounded-md border border-gray-200"
+                          className="text-xs bg-white dark:bg-gray-600 text-gray-600 dark:text-gray-200 px-2 py-1 rounded-md border border-gray-200 dark:border-gray-500"
                         >
                           {example}
                         </span>
@@ -153,7 +153,7 @@ export default function CookieSettings() {
           </div>
         </div>
 
-        <div className="p-6 border-t border-gray-200 bg-gray-50">
+        <div className="p-6 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
           <div className="flex flex-col sm:flex-row gap-3">
             <button
               onClick={handleAcceptAll}
@@ -169,7 +169,7 @@ export default function CookieSettings() {
             </button>
             <button
               onClick={closeSettings}
-              className="sm:w-auto bg-white hover:bg-gray-100 text-gray-700 px-6 py-3 rounded-xl font-semibold border-2 border-gray-200 transition-colors duration-200"
+              className="sm:w-auto bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 px-6 py-3 rounded-xl font-semibold border-2 border-gray-200 dark:border-gray-600 transition-colors duration-200"
             >
               Cancelar
             </button>

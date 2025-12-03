@@ -142,17 +142,17 @@ export default function AgentesIA() {
         description="Agentes de IA para WhatsApp que automatizam atendimento e vendas 24/7 em Salvador. Qualificação de leads, follow-up inteligente e aumento de 300% nas conversões. Chatbot personalizado para seu negócio."
         keywords="agentes de IA Salvador, chatbot WhatsApp, automação de vendas, IA conversacional Bahia, atendimento automatizado, bot WhatsApp Business"
       />
-      <section className="bg-gradient-to-br from-orange-50 via-white to-orange-50 py-20">
+      <section className="bg-gradient-to-br from-orange-50 via-white to-orange-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-20 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="bg-orange-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <Bot className="h-10 w-10 text-orange-600" />
+            <div className="bg-orange-100 dark:bg-orange-900 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <Bot className="h-10 w-10 text-orange-600 dark:text-orange-400" />
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
+            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6">
               Agentes de IA para
-              <span className="text-orange-600"> WhatsApp</span>
+              <span className="text-orange-600 dark:text-orange-400"> WhatsApp</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-4xl mx-auto">
               Automatize suas vendas com Agentes de IA inteligentes. Atendimento 24/7,
               conversão otimizada e acompanhamento personalizado de cada lead.
             </p>
@@ -168,7 +168,7 @@ export default function AgentesIA() {
               </a>
               <a
                 href="#casos"
-                className="border-2 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-colors duration-200"
+                className="border-2 border-orange-600 dark:border-orange-400 text-orange-600 dark:text-orange-400 hover:bg-orange-600 dark:hover:bg-orange-500 hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-colors duration-200"
               >
                 Ver Casos de Uso
               </a>
@@ -177,13 +177,13 @@ export default function AgentesIA() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-800 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Por que escolher nossos Agentes de IA?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Transforme sua operação de vendas com tecnologia de ponta
             </p>
           </div>
@@ -192,12 +192,12 @@ export default function AgentesIA() {
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <div key={index} className="bg-white border-2 border-gray-100 rounded-2xl p-8 hover:shadow-xl hover:border-orange-200 transition-all duration-300">
-                  <div className="bg-orange-100 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
-                    <IconComponent className="h-7 w-7 text-orange-600" />
+                <div key={index} className="bg-white dark:bg-gray-700 border-2 border-gray-100 dark:border-gray-600 rounded-2xl p-8 hover:shadow-xl hover:border-orange-200 dark:hover:border-orange-500 transition-all duration-300">
+                  <div className="bg-orange-100 dark:bg-orange-900 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                    <IconComponent className="h-7 w-7 text-orange-600 dark:text-orange-400" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{feature.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{feature.description}</p>
                 </div>
               );
             })}
@@ -205,49 +205,49 @@ export default function AgentesIA() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               O que o Agente Pode Fazer?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Funcionalidades poderosas para automatizar todo o processo de vendas
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {capabilities.map((capability, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 flex items-start space-x-4 hover:shadow-lg transition-all duration-300">
-                <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-1" />
-                <span className="text-gray-700 text-lg">{capability}</span>
+              <div key={index} className="bg-white dark:bg-gray-800 rounded-xl p-6 flex items-start space-x-4 hover:shadow-lg transition-all duration-300">
+                <CheckCircle className="h-6 w-6 text-green-500 dark:text-green-400 flex-shrink-0 mt-1" />
+                <span className="text-gray-700 dark:text-gray-300 text-lg">{capability}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="casos" className="py-20 bg-orange-50">
+      <section id="casos" className="py-20 bg-orange-50 dark:bg-gray-800 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Casos de Uso por Segmento
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Soluções personalizadas para cada tipo de negócio
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {useCases.map((useCase, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 border-2 border-orange-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{useCase.title}</h3>
-                <p className="text-gray-600 mb-6">{useCase.description}</p>
+              <div key={index} className="bg-white dark:bg-gray-700 rounded-2xl p-8 border-2 border-orange-100 dark:border-orange-900 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{useCase.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-6">{useCase.description}</p>
                 <ul className="space-y-3">
                   {useCase.scenarios.map((scenario, idx) => (
                     <li key={idx} className="flex items-start space-x-3">
                       <CheckCircle className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{scenario}</span>
+                      <span className="text-gray-700 dark:text-gray-300">{scenario}</span>
                     </li>
                   ))}
                 </ul>
@@ -257,13 +257,13 @@ export default function AgentesIA() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Como Funciona
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Processo simples em 5 etapas
             </p>
           </div>
@@ -274,21 +274,21 @@ export default function AgentesIA() {
                 <div className="bg-gradient-to-br from-orange-600 to-orange-700 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-lg">
                   {item.step}
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.description}</p>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-800 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Resultados Comprovados
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Veja o impacto em números reais
             </p>
           </div>
@@ -296,17 +296,17 @@ export default function AgentesIA() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {results.map((result, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-orange-600 mb-2">{result.value}</div>
-                <p className="text-gray-600 text-sm">{result.label}</p>
+                <div className="text-4xl md:text-5xl font-bold text-orange-600 dark:text-orange-400 mb-2">{result.value}</div>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">{result.label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-orange-600 to-red-600 rounded-3xl p-12 text-center shadow-2xl">
+          <div className="bg-gradient-to-br from-orange-600 to-red-600 dark:from-orange-700 dark:to-red-700 rounded-3xl p-12 text-center shadow-2xl">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Pronto para Automatizar suas Vendas?
             </h2>
