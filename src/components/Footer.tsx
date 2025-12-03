@@ -1,4 +1,4 @@
-import { Phone, MessageCircle, Globe, Settings, Bot, Cookie, Shield } from 'lucide-react';
+import { Phone, MessageCircle, Globe, Settings, Bot, Cookie, Shield, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCookieConsent } from '../contexts/CookieConsentContext';
 
@@ -74,6 +74,13 @@ export default function Footer() {
               &copy; 2025 ER.IA. Todos os direitos reservados.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
+              <Link
+                to="/politica-privacidade"
+                className="text-gray-400 hover:text-white transition-colors flex items-center space-x-1"
+              >
+                <FileText className="h-4 w-4" />
+                <span>Política de Privacidade</span>
+              </Link>
               <Link
                 to="/politica-cookies"
                 className="text-gray-400 hover:text-white transition-colors flex items-center space-x-1"

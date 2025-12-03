@@ -9,6 +9,7 @@ export default function Header() {
 
   const navItems = [
     { path: '/', label: 'Início' },
+    { path: '/sobre', label: 'Sobre' },
     { path: '/sites', label: 'Sites & E-commerce' },
     { path: '/sistemas', label: 'Sistemas' },
     { path: '/agentes-ia', label: 'Agentes de IA' },
