@@ -14,6 +14,8 @@ import CookiePolicy from './pages/CookiePolicy';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import FormAgentesIA from './pages/FormAgentesIA';
 import FormSites from './pages/FormSites';
+import FormSistemas from './pages/FormSistemas';
+import FormEcommerce from './pages/FormEcommerce';
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
             <Route path="/politica-privacidade" element={<PrivacyPolicy />} />
             <Route path="/form-agentes-ia" element={<FormAgentesIA />} />
             <Route path="/form-sites-e-lp" element={<FormSites />} />
+            <Route path="/form-sistemas-personalizados" element={<FormSistemas />} />
+            <Route path="/form-ecommerces" element={<FormEcommerce />} />
           </Routes>
           <Footer />
           <CookieBanner />

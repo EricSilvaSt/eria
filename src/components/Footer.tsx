@@ -1,4 +1,4 @@
-import { Phone, MessageCircle, Globe, Settings, Bot, Cookie, Shield, FileText } from 'lucide-react';
+import { Phone, MessageCircle, Globe, Settings, Bot, Cookie, Shield, FileText, Mail, FileEdit } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCookieConsent } from '../contexts/CookieConsentContext';
 
@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-5 gap-8">
           <div className="col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <img
@@ -49,11 +49,47 @@ export default function Footer() {
           </div>
 
           <div>
+            <h4 className="text-lg font-semibold mb-4">Solicitar Orçamento</h4>
+            <ul className="space-y-2 text-gray-400 text-sm">
+              <li>
+                <Link to="/form-agentes-ia" className="hover:text-white transition-colors flex items-center space-x-2">
+                  <FileEdit className="h-4 w-4" />
+                  <span>Agentes de IA</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/form-sites-e-lp" className="hover:text-white transition-colors flex items-center space-x-2">
+                  <FileEdit className="h-4 w-4" />
+                  <span>Sites / Landing Page</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/form-sistemas-personalizados" className="hover:text-white transition-colors flex items-center space-x-2">
+                  <FileEdit className="h-4 w-4" />
+                  <span>Sistemas</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/form-ecommerces" className="hover:text-white transition-colors flex items-center space-x-2">
+                  <FileEdit className="h-4 w-4" />
+                  <span>E-commerce</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
             <h4 className="text-lg font-semibold mb-4">Contato</h4>
-            <div className="space-y-2 text-gray-400">
-              <div className="flex items-center space-x-2">
-                <Phone className="h-5 w-5" />
+            <div className="space-y-3 text-gray-400 text-sm">
+              <div className="flex items-start space-x-2">
+                <Phone className="h-4 w-4 mt-1 flex-shrink-0" />
                 <span>{whatsappNumber}</span>
+              </div>
+              <div className="flex items-start space-x-2">
+                <Mail className="h-4 w-4 mt-1 flex-shrink-0" />
+                <a href="mailto:adm@eria.tec.br" className="hover:text-white transition-colors">
+                  adm@eria.tec.br
+                </a>
               </div>
               <a
                 href={whatsappLink}

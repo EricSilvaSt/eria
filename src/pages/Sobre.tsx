@@ -1,9 +1,26 @@
-import { MessageCircle, Target, Eye, Heart, CheckCircle, Zap } from 'lucide-react';
+import { MessageCircle, Target, Eye, Heart, CheckCircle, Zap, User, ExternalLink } from 'lucide-react';
 import SEO from '../components/SEO';
 
 export default function Sobre() {
   const whatsappNumber = "71981526218";
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
+
+  const fundadores = [
+    {
+      nome: 'Eric Silva',
+      cargo: 'CEO & CTO',
+      subtitulo: 'Founder',
+      descricao: 'Visionário em tecnologia e automação, lidera a direção estratégica e técnica da ER.IA.',
+      link: 'https://eric.eria.tec.br'
+    },
+    {
+      nome: 'Iago Silva',
+      cargo: 'CRO',
+      subtitulo: 'Founder',
+      descricao: 'Especialista em crescimento e relacionamento com clientes, impulsiona a expansão da empresa.',
+      link: 'https://iago.eria.tec.br'
+    }
+  ];
 
   const valores = [
     {
@@ -150,6 +167,49 @@ export default function Sobre() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Nossos Fundadores
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Conheça quem está por trás da ER.IA
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            {fundadores.map((fundador, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              >
+                <div className="bg-gradient-to-br from-blue-600 to-green-600 h-48 flex items-center justify-center">
+                  <div className="bg-white w-32 h-32 rounded-full flex items-center justify-center">
+                    <User className="h-20 w-20 text-gray-400" />
+                  </div>
+                </div>
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-1">{fundador.nome}</h3>
+                  <p className="text-lg font-semibold text-blue-600 mb-1">{fundador.cargo}</p>
+                  <p className="text-sm text-gray-500 mb-4">{fundador.subtitulo}</p>
+                  <p className="text-gray-600 leading-relaxed mb-6">{fundador.descricao}</p>
+                  <a
+                    href={fundador.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-semibold transition-colors"
+                  >
+                    <span>Ver perfil completo</span>
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
