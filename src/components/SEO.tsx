@@ -7,6 +7,7 @@ interface SEOProps {
   keywords?: string;
   image?: string;
   type?: string;
+  schema?: object;
 }
 
 export default function SEO({
@@ -14,7 +15,8 @@ export default function SEO({
   description,
   keywords = 'desenvolvimento web Salvador, criação de sites Bahia, e-commerce, sistemas personalizados, agentes de IA',
   image = 'https://eria.tec.br/eria_logo.jpeg',
-  type = 'website'
+  type = 'website',
+  schema
 }: SEOProps) {
   const location = useLocation();
   const url = `https://eria.tec.br${location.pathname}`;
@@ -30,6 +32,9 @@ export default function SEO({
       { property: 'og:url', content: url },
       { property: 'og:image', content: image },
       { property: 'og:type', content: type },
+      { property: 'og:site_name', content: 'ER.IA' },
+      { property: 'og:locale', content: 'pt_BR' },
+      { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: title },
       { name: 'twitter:description', content: description },
       { name: 'twitter:image', content: image },
@@ -59,7 +64,19 @@ export default function SEO({
       canonical.setAttribute('href', url);
       document.head.appendChild(canonical);
     }
-  }, [title, description, keywords, image, type, url]);
+
+    if (schema) {
+      let schemaScript = document.querySelector('script[type="application/ld+json"]');
+      if (schemaScript) {
+        schemaScript.textContent = JSON.stringify(schema);
+      } else {
+        schemaScript = document.createElement('script');
+        schemaScript.setAttribute('type', 'application/ld+json');
+        schemaScript.textContent = JSON.stringify(schema);
+        document.head.appendChild(schemaScript);
+      }
+    }
+  }, [title, description, keywords, image, type, url, schema]);
 
   return null;
 }

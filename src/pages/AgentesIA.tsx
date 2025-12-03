@@ -227,7 +227,7 @@ export default function AgentesIA() {
         </div>
       </section>
 
-      <section id="casos" className="py-20 bg-white">
+      <section id="casos" className="py-20 bg-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -240,7 +240,7 @@ export default function AgentesIA() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {useCases.map((useCase, index) => (
-              <div key={index} className="bg-gradient-to-br from-orange-50 to-white rounded-2xl p-8 border-2 border-orange-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+              <div key={index} className="bg-white rounded-2xl p-8 border-2 border-orange-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{useCase.title}</h3>
                 <p className="text-gray-600 mb-6">{useCase.description}</p>
                 <ul className="space-y-3">

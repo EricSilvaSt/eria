@@ -6,6 +6,73 @@ export default function Home() {
   const whatsappNumber = "71981526218";
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ER.IA",
+    "url": "https://eria.tec.br",
+    "logo": "https://eria.tec.br/eria_logo.jpeg",
+    "description": "Desenvolvimento de sites profissionais, e-commerce, sistemas personalizados e agentes de IA para WhatsApp em Salvador, Bahia.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Salvador",
+      "addressRegion": "BA",
+      "addressCountry": "BR"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+55-71-98152-6218",
+      "contactType": "customer service",
+      "areaServed": "BR",
+      "availableLanguage": "Portuguese"
+    },
+    "sameAs": [
+      "https://wa.me/5571981526218"
+    ]
+  };
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ER.IA",
+    "image": "https://eria.tec.br/eria_logo.jpeg",
+    "description": "Soluções completas em desenvolvimento web, sistemas personalizados e automação com inteligência artificial em Salvador, Bahia.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Salvador",
+      "addressRegion": "BA",
+      "addressCountry": "BR"
+    },
+    "telephone": "+55-71-98152-6218",
+    "url": "https://eria.tec.br",
+    "priceRange": "$$",
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": "-12.9777",
+        "longitude": "-38.5016"
+      }
+    }
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ER.IA",
+    "url": "https://eria.tec.br",
+    "description": "Desenvolvimento Web, Sistemas e Agentes de IA em Salvador, Bahia",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ER.IA"
+    }
+  };
+
+  const combinedSchema = {
+    "@context": "https://schema.org",
+    "@graph": [organizationSchema, localBusinessSchema, websiteSchema]
+  };
+
   const services = [
     {
       title: 'Sites & E-commerce',
@@ -36,6 +103,7 @@ export default function Home() {
         title="ER.IA - Desenvolvimento Web, Sistemas e Agentes de IA | Salvador, Bahia"
         description="ER.IA desenvolve sites profissionais, e-commerce, sistemas personalizados e agentes de IA para WhatsApp em Salvador, Bahia. Automação, tecnologia de ponta e suporte especializado para seu negócio."
         keywords="desenvolvimento web Salvador, criação de sites Bahia, e-commerce Salvador, sistemas personalizados, agentes de IA, automação WhatsApp"
+        schema={combinedSchema}
       />
       <section className="bg-gradient-to-br from-blue-50 via-white to-green-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
