@@ -3,7 +3,6 @@ import { CookiePreferences } from '../types/cookie.types';
 import {
   getStoredConsent,
   saveConsent,
-  hasConsented,
   getDefaultPreferences,
   getAllAcceptedPreferences,
   getDeviceType,
@@ -26,6 +25,8 @@ interface CookieConsentContextType {
 
 const CookieConsentContext = createContext<CookieConsentContextType | undefined>(undefined);
 
+// The provider and its hook intentionally share one module to keep the consent API atomic.
+// eslint-disable-next-line react-refresh/only-export-components
 export const useCookieConsent = () => {
   const context = useContext(CookieConsentContext);
   if (!context) {
@@ -44,6 +45,18 @@ export const CookieConsentProvider = ({ children }: CookieConsentProviderProps) 
   const [showBanner, setShowBanner] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
 
+  const trackVisit = async () => {
+    const sessionId = getSessionId();
+    await trackPageView({
+      sessionId,
+      pageUrl: window.location.href,
+      pageTitle: document.title,
+      referrer: document.referrer,
+      deviceType: getDeviceType(),
+      browser: getBrowserName(),
+    });
+  };
+
   useEffect(() => {
     const existingConsent = getStoredConsent();
 
@@ -59,18 +72,6 @@ export const CookieConsentProvider = ({ children }: CookieConsentProviderProps) 
       setShowBanner(true);
     }
   }, []);
-
-  const trackVisit = async () => {
-    const sessionId = getSessionId();
-    await trackPageView({
-      sessionId,
-      pageUrl: window.location.href,
-      pageTitle: document.title,
-      referrer: document.referrer,
-      deviceType: getDeviceType(),
-      browser: getBrowserName(),
-    });
-  };
 
   const acceptAll = () => {
     const allAccepted = getAllAcceptedPreferences();

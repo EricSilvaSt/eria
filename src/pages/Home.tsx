@@ -1,318 +1,221 @@
-import { Zap, Shield, Rocket, MessageCircle, ArrowRight, Globe, Settings, Bot, CheckCircle } from 'lucide-react';
+import {
+  ArrowDownRight,
+  ArrowRight,
+  ArrowUpRight,
+  Bot,
+  Check,
+  FileSignature,
+  FileText,
+  Headphones,
+  LayoutDashboard,
+  MessageCircle,
+  PanelsTopLeft,
+  Workflow,
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
+const products = [
+  {
+    name: 'ER.IA Hub',
+    label: 'ATENDIMENTO E VENDAS',
+    description: 'WhatsApp, IA, CRM, agenda e follow-up trabalhando como uma única operação comercial.',
+    icon: LayoutDashboard,
+    href: 'https://hub.eria.tec.br',
+    status: 'Disponível',
+    live: true,
+  },
+  {
+    name: 'ER.IA Sign',
+    label: 'ASSINATURAS DIGITAIS',
+    description: 'Documentos enviados, acompanhados e assinados com simplicidade e segurança.',
+    icon: FileSignature,
+    href: '/ecossistema#eria-sign',
+    status: 'Em desenvolvimento',
+  },
+  {
+    name: 'GeraDoc',
+    label: 'DOCUMENTOS INTELIGENTES',
+    description: 'Orçamentos, contratos e documentos criados a partir da necessidade real do usuário.',
+    icon: FileText,
+    href: '/ecossistema#geradoc',
+    status: 'Em desenvolvimento',
+  },
+  {
+    name: 'Helpy',
+    label: 'SUPORTE ORGANIZADO',
+    description: 'Tickets, prioridades, equipes e histórico para uma operação de suporte completa.',
+    icon: Headphones,
+    href: '/ecossistema#helpy',
+    status: 'Em desenvolvimento',
+  },
+  {
+    name: 'ER.IA Flow',
+    label: 'TRABALHO EM MOVIMENTO',
+    description: 'Projetos, tarefas e subtarefas conectados ao que sua empresa precisa entregar.',
+    icon: Workflow,
+    href: '/ecossistema#eria-flow',
+    status: 'Em desenvolvimento',
+  },
+] as const;
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'ER.IA Tecnologia',
+  url: 'https://eria.tec.br',
+  logo: 'https://eria.tec.br/eria_logo.jpeg',
+  description: 'Ecossistema de produtos digitais, inteligência artificial e software sob medida.',
+  address: { '@type': 'PostalAddress', addressLocality: 'Salvador', addressRegion: 'BA', addressCountry: 'BR' },
+  contactPoint: { '@type': 'ContactPoint', telephone: '+55-71-98152-6218', contactType: 'sales', availableLanguage: 'Portuguese' },
+};
+
 export default function Home() {
-  const whatsappNumber = "71981526218";
-  const whatsappLink = `https://wa.me/${whatsappNumber}`;
-
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "ER.IA",
-    "url": "https://eria.tec.br",
-    "logo": "https://eria.tec.br/eria_logo.jpeg",
-    "description": "Desenvolvimento de sites profissionais, e-commerce, sistemas personalizados e agentes de IA para WhatsApp em Salvador, Bahia.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Salvador",
-      "addressRegion": "BA",
-      "addressCountry": "BR"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+55-71-98152-6218",
-      "contactType": "customer service",
-      "areaServed": "BR",
-      "availableLanguage": "Portuguese"
-    },
-    "sameAs": [
-      "https://wa.me/5571981526218"
-    ]
-  };
-
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "ER.IA",
-    "image": "https://eria.tec.br/eria_logo.jpeg",
-    "description": "Soluções completas em desenvolvimento web, sistemas personalizados e automação com inteligência artificial em Salvador, Bahia.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Salvador",
-      "addressRegion": "BA",
-      "addressCountry": "BR"
-    },
-    "telephone": "+55-71-98152-6218",
-    "url": "https://eria.tec.br",
-    "priceRange": "$$",
-    "areaServed": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": "-12.9777",
-        "longitude": "-38.5016"
-      }
-    }
-  };
-
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "ER.IA",
-    "url": "https://eria.tec.br",
-    "description": "Desenvolvimento Web, Sistemas e Agentes de IA em Salvador, Bahia",
-    "publisher": {
-      "@type": "Organization",
-      "name": "ER.IA"
-    }
-  };
-
-  const combinedSchema = {
-    "@context": "https://schema.org",
-    "@graph": [organizationSchema, localBusinessSchema, websiteSchema]
-  };
-
-  const services = [
-    {
-      title: 'Sites & E-commerce',
-      icon: Globe,
-      description: 'Criação de sites profissionais, landing pages de alta conversão e e-commerce completo com integração de pagamentos.',
-      link: '/sites',
-      color: 'blue'
-    },
-    {
-      title: 'Sistemas',
-      icon: Settings,
-      description: 'Desenvolvimento de sistemas personalizados, automação de processos e integração com suas ferramentas atuais.',
-      link: '/sistemas',
-      color: 'green'
-    },
-    {
-      title: 'Agentes de IA',
-      icon: Bot,
-      description: 'Agentes inteligentes para WhatsApp que automatizam atendimento, qualificam leads e aumentam suas conversões.',
-      link: '/agentes-ia',
-      color: 'orange'
-    }
-  ];
-
   return (
-    <div className="min-h-screen">
+    <main>
       <SEO
-        title="ER.IA - Desenvolvimento Web, Sistemas e Agentes de IA | Salvador, Bahia"
-        description="ER.IA desenvolve sites profissionais, e-commerce, sistemas personalizados e agentes de IA para WhatsApp em Salvador, Bahia. Automação, tecnologia de ponta e suporte especializado para seu negócio."
-        keywords="desenvolvimento web Salvador, criação de sites Bahia, e-commerce Salvador, sistemas personalizados, agentes de IA, automação WhatsApp"
-        schema={combinedSchema}
+        title="ER.IA | Tecnologia conectada para negócios que querem crescer"
+        description="Conheça o ecossistema ER.IA: atendimento com IA, CRM, documentos, assinaturas, suporte e gestão de tarefas em produtos que trabalham juntos."
+        keywords="ER.IA, ER.IA Hub, inteligência artificial, CRM WhatsApp, assinatura digital, documentos, gestão de tarefas, Salvador"
+        schema={organizationSchema}
       />
-      <section className="bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-20 transition-colors duration-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6">
-              Transforme seu Negócio
-              <span className="text-blue-600 dark:text-blue-400"> com Tecnologia</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-4xl mx-auto">
-              Soluções completas em desenvolvimento web, sistemas personalizados e automação com inteligência artificial.
+
+      <section className="hero-section">
+        <div className="node-field" aria-hidden="true">
+          {Array.from({ length: 18 }).map((_, index) => <i key={index} />)}
+        </div>
+        <div className="site-shell hero-grid">
+          <div className="hero-copy reveal">
+            <p className="eyebrow"><span /> TECNOLOGIA QUE ECOA POR TODA A OPERAÇÃO</p>
+            <h1>Menos ferramentas soltas. <em>Mais negócio acontecendo.</em></h1>
+            <p className="hero-description">
+              A ER.IA conecta atendimento, vendas, documentos, execução e suporte em produtos
+              inteligentes que compartilham contexto e devolvem tempo para sua empresa crescer.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 flex items-center justify-center space-x-2 transform hover:scale-105"
-              >
-                <MessageCircle className="h-6 w-6" />
-                <span>Fale com Especialista</span>
+            <div className="hero-actions">
+              <a href="https://hub.eria.tec.br" className="button button-primary">
+                Conhecer o ER.IA Hub <ArrowUpRight size={18} />
               </a>
-              <a
-                href="#servicos"
-                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-colors duration-200 flex items-center justify-center space-x-2"
-              >
-                <span>Conheça Nossos Serviços</span>
-                <ArrowRight className="h-5 w-5" />
-              </a>
+              <Link to="/ecossistema" className="text-link">
+                Explorar o ecossistema <ArrowRight size={17} />
+              </Link>
             </div>
+            <div className="hero-proof">
+              <span><Check size={14} /> 7 dias para testar o Hub</span>
+              <span><Check size={14} /> Implantação orientada</span>
+              <span><Check size={14} /> Feito no Brasil</span>
+            </div>
+          </div>
+
+          <div className="operation-map reveal delay-1" aria-label="Fluxo integrado do ecossistema ER.IA">
+            <div className="map-orbit orbit-one" />
+            <div className="map-orbit orbit-two" />
+            <div className="map-core">
+              <img src="/eria.png" alt="Símbolo ER.IA" />
+              <span>CONTA ER.IA</span>
+              <strong>Um acesso.<br />Todo o contexto.</strong>
+            </div>
+            <div className="map-node node-chat"><MessageCircle /><span>Atender</span></div>
+            <div className="map-node node-doc"><FileText /><span>Documentar</span></div>
+            <div className="map-node node-flow"><Workflow /><span>Executar</span></div>
+            <div className="map-node node-support"><Headphones /><span>Suportar</span></div>
+          </div>
+        </div>
+        <div className="hero-index site-shell"><span>01</span><ArrowDownRight size={18} /><span>ECOSSISTEMA ER.IA</span></div>
+      </section>
+
+      <section className="manifest-section">
+        <div className="site-shell manifest-grid">
+          <p className="section-number">02 / A IDEIA</p>
+          <div>
+            <h2>Seu cliente não enxerga departamentos. Ele enxerga uma empresa.</h2>
+            <p>Por isso, seus sistemas também precisam conversar. Uma informação capturada no atendimento pode virar proposta, contrato, tarefa e suporte sem começar tudo de novo.</p>
+          </div>
+          <div className="manifest-stats">
+            <div><strong>1</strong><span>Conta ER.IA</span></div>
+            <div><strong>5</strong><span>Produtos conectáveis</span></div>
+            <div><strong>∞</strong><span>Contexto reaproveitado</span></div>
           </div>
         </div>
       </section>
 
-      <section id="servicos" className="py-20 bg-white dark:bg-gray-800 transition-colors duration-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              Nossos Serviços
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Soluções completas para levar seu negócio ao próximo nível
-            </p>
+      <section className="products-section" id="produtos">
+        <div className="site-shell">
+          <div className="section-heading">
+            <div><p className="eyebrow">PRODUTOS</p><h2>Um ecossistema que cresce com você.</h2></div>
+            <p>Comece pelo problema mais urgente. Conecte os outros produtos quando fizer sentido.</p>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {services.map((service, index) => {
-              const IconComponent = service.icon;
-              const colorClasses = {
-                blue: 'bg-blue-100 text-blue-600',
-                green: 'bg-green-100 text-green-600',
-                orange: 'bg-orange-100 text-orange-600'
-              };
-
-              return (
-                <div key={index} className="bg-white dark:bg-gray-700 border-2 border-gray-100 dark:border-gray-600 rounded-2xl p-8 hover:shadow-2xl hover:border-gray-200 dark:hover:border-gray-500 transition-all duration-300 transform hover:-translate-y-2">
-                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${colorClasses[service.color as keyof typeof colorClasses]}`}>
-                    <IconComponent className="h-8 w-8" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{service.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">{service.description}</p>
-                  <Link
-                    to={service.link}
-                    className="inline-flex items-center space-x-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold transition-colors"
-                  >
-                    <span>Saiba mais</span>
-                    <ArrowRight className="h-5 w-5" />
-                  </Link>
-                </div>
+          <div className="product-grid">
+            {products.map((product, index) => {
+              const Icon = product.icon;
+              const content = (
+                <>
+                  <div className="product-top"><span>0{index + 1}</span><span className={product.live ? 'status live' : 'status'}>{product.status}</span></div>
+                  <Icon className="product-icon" />
+                  <p className="product-label">{product.label}</p>
+                  <h3>{product.name}</h3>
+                  <p>{product.description}</p>
+                  <span className="product-link">{product.live ? 'Acessar produto' : 'Ver visão do produto'} <ArrowUpRight size={16} /></span>
+                </>
               );
+              return product.href.startsWith('http') ?
+                <a className="product-card" href={product.href} key={product.name}>{content}</a> :
+                <Link className="product-card" to={product.href} key={product.name}>{content}</Link>;
             })}
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              Por que escolher a ER.IA?
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Diferenciais que fazem toda a diferença
-            </p>
+      <section className="hub-feature">
+        <div className="site-shell hub-feature-grid">
+          <div className="hub-panel">
+            <div className="hub-panel-head"><span>ER.IA HUB / AO VIVO</span><span className="pulse" /></div>
+            <div className="hub-conversation">
+              <div className="bubble client">Olá! Vocês têm horário amanhã?</div>
+              <div className="typing"><i /><i /><i /></div>
+              <div className="bubble agent">Tenho às 10h ou às 15h. Qual funciona melhor para você?</div>
+            </div>
+            <div className="hub-panel-foot"><Bot size={16} /> IA treinada com as informações da empresa</div>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="bg-blue-100 dark:bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Zap className="h-8 w-8 text-blue-600 dark:text-blue-400" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Entrega Rápida</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Processos ágeis e eficientes para entregar seu projeto no prazo sem comprometer a qualidade.
-              </p>
-            </div>
-
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="bg-green-100 dark:bg-green-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Shield className="h-8 w-8 text-green-600 dark:text-green-400" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Segurança Total</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Todas as soluções seguem as melhores práticas de segurança e proteção de dados.
-              </p>
-            </div>
-
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="bg-orange-100 dark:bg-orange-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Rocket className="h-8 w-8 text-orange-600 dark:text-orange-400" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Tecnologia de Ponta</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Utilizamos as tecnologias mais modernas e eficientes do mercado.
-              </p>
-            </div>
+          <div className="hub-copy">
+            <p className="eyebrow light">PRIMEIRO PRODUTO DISPONÍVEL</p>
+            <h2>Seu WhatsApp trabalhando mesmo quando você não está.</h2>
+            <p>Atendimento humanizado, CRM, agenda e follow-up em uma operação que aprende o contexto da empresa e transforma conversa em oportunidade.</p>
+            <ul>
+              <li><Check /> IA configurada para cada empresa</li>
+              <li><Check /> Conversas e leads em tempo real</li>
+              <li><Check /> Agendamento direto pelo WhatsApp</li>
+              <li><Check /> Gestão comercial em um só lugar</li>
+            </ul>
+            <a href="https://hub.eria.tec.br" className="button button-light">Testar por 7 dias <ArrowUpRight size={18} /></a>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white dark:bg-gray-800 transition-colors duration-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                Processo Transparente e Eficiente
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                Do planejamento à entrega, você acompanha cada etapa do desenvolvimento do seu projeto.
-              </p>
-
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-lg">
-                    <CheckCircle className="h-6 w-6 text-blue-600 dark:text-blue-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Análise e Planejamento</h3>
-                    <p className="text-gray-600 dark:text-gray-300">Entendemos suas necessidades e criamos a melhor estratégia.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="bg-green-100 dark:bg-green-900 p-3 rounded-lg">
-                    <CheckCircle className="h-6 w-6 text-green-600 dark:text-green-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Desenvolvimento</h3>
-                    <p className="text-gray-600 dark:text-gray-300">Criamos sua solução com as melhores tecnologias do mercado.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="bg-orange-100 dark:bg-orange-900 p-3 rounded-lg">
-                    <CheckCircle className="h-6 w-6 text-orange-600 dark:text-orange-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Entrega e Suporte</h3>
-                    <p className="text-gray-600 dark:text-gray-300">Lançamos seu projeto e oferecemos suporte contínuo.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-12 text-center">
-              <img
-                src="/eria_logo.jpeg"
-                alt="Ilustração"
-                className="w-full h-auto rounded-xl mb-6"
-              />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Pronto para começar?
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Entre em contato e receba uma proposta personalizada para seu projeto.
-              </p>
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full font-bold transition-all duration-200 inline-flex items-center space-x-2 transform hover:scale-105"
-              >
-                <MessageCircle className="h-5 w-5" />
-                <span>Solicitar Orçamento</span>
-              </a>
-            </div>
+      <section className="services-section">
+        <div className="site-shell">
+          <div className="section-heading">
+            <div><p className="eyebrow">SOLUÇÕES SOB MEDIDA</p><h2>Quando o produto pronto não basta.</h2></div>
+            <p>A ER.IA também desenha tecnologia específica para processos e oportunidades únicas.</p>
+          </div>
+          <div className="service-list">
+            <Link to="/sites"><span>01</span><PanelsTopLeft /><div><strong>Sites e e-commerce</strong><p>Presença digital que comunica, convence e converte.</p></div><ArrowUpRight /></Link>
+            <Link to="/sistemas"><span>02</span><Workflow /><div><strong>Sistemas personalizados</strong><p>Software moldado ao fluxo real da operação.</p></div><ArrowUpRight /></Link>
+            <Link to="/agentes-ia"><span>03</span><Bot /><div><strong>Agentes de IA</strong><p>Automação com contexto, regras e objetivos claros.</p></div><ArrowUpRight /></Link>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-green-600 dark:from-blue-700 dark:to-green-700 transition-colors duration-200">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Vamos Transformar seu Negócio?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Converse com nossos especialistas e descubra como podemos ajudar você a alcançar seus objetivos.
-          </p>
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 inline-flex items-center space-x-2 transform hover:scale-105"
-          >
-            <MessageCircle className="h-6 w-6" />
-            <span>Começar Agora</span>
-            <ArrowRight className="h-5 w-5" />
-          </a>
+      <section className="final-cta">
+        <div className="site-shell final-cta-inner">
+          <p className="eyebrow light">VAMOS CONECTAR OS PONTOS?</p>
+          <h2>Mostre o gargalo.<br /><em>A gente desenha o próximo movimento.</em></h2>
+          <div>
+            <a href="https://wa.me/5571981526218" target="_blank" rel="noreferrer" className="button button-light"><MessageCircle size={18} /> Conversar no WhatsApp</a>
+            <Link to="/ecossistema" className="text-link light">Conhecer os produtos <ArrowRight size={17} /></Link>
+          </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

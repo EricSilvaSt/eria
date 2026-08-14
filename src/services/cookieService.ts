@@ -1,6 +1,5 @@
 import { supabase } from '../lib/supabase';
 import { CookiePreferences, VisitorData } from '../types/cookie.types';
-import { hashString } from '../lib/cookieUtils';
 
 export const saveConsentToDatabase = async (
   consentId: string,
@@ -9,8 +8,6 @@ export const saveConsentToDatabase = async (
   if (!supabase) return;
 
   try {
-    const ipHash = await getIpHash();
-
     const { error } = await supabase
       .from('cookie_consents')
       .insert({
@@ -20,7 +17,7 @@ export const saveConsentToDatabase = async (
         analytics: preferences.analytics,
         marketing: preferences.marketing,
         preferences: preferences.preferences,
-        ip_hash: ipHash,
+        ip_hash: null,
         user_agent: navigator.userAgent,
         page_url: window.location.href,
       });
@@ -54,17 +51,6 @@ export const trackPageView = async (visitorData: VisitorData): Promise<void> => 
     }
   } catch (error) {
     console.error('Error in trackPageView:', error);
-  }
-};
-
-const getIpHash = async (): Promise<string> => {
-  try {
-    const response = await fetch('https://api.ipify.org?format=json');
-    const data = await response.json();
-    const ipAddress = data.ip;
-    return await hashString(ipAddress);
-  } catch {
-    return await hashString('unknown');
   }
 };
 

@@ -17,6 +17,8 @@ import FormAgentesIA from './pages/FormAgentesIA';
 import FormSites from './pages/FormSites';
 import FormSistemas from './pages/FormSistemas';
 import FormEcommerce from './pages/FormEcommerce';
+import Ecossistema from './pages/Ecossistema';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -24,11 +26,12 @@ function App() {
       <ThemeProvider>
         <CookieConsentProvider>
           <ScrollToTop />
-          <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
+          <div className="min-h-screen">
             <Header />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/sobre" element={<Sobre />} />
+              <Route path="/ecossistema" element={<Ecossistema />} />
               <Route path="/sites" element={<Sites />} />
               <Route path="/sistemas" element={<Sistemas />} />
               <Route path="/agentes-ia" element={<AgentesIA />} />
@@ -38,6 +41,7 @@ function App() {
               <Route path="/form-sites-e-lp" element={<FormSites />} />
               <Route path="/form-sistemas-personalizados" element={<FormSistemas />} />
               <Route path="/form-ecommerces" element={<FormEcommerce />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
             <CookieBanner />

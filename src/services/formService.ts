@@ -1,5 +1,12 @@
 import { supabase } from '../lib/supabase';
 
+const getClient = () => {
+  if (!supabase) {
+    throw new Error('O formulário está temporariamente indisponível. Fale conosco pelo WhatsApp.');
+  }
+  return supabase;
+};
+
 export interface FormSubmissionData {
   service_type: 'agentes_ia' | 'sites' | 'sistemas' | 'ecommerce';
   nome_empresa: string;
@@ -77,7 +84,8 @@ export const formService = {
     baseData: FormSubmissionData,
     specificData: AgentesIAFormData
   ) {
-    const { data: submission, error: submissionError } = await supabase
+    const client = getClient();
+    const { data: submission, error: submissionError } = await client
       .from('form_submissions')
       .insert([baseData])
       .select()
@@ -85,7 +93,7 @@ export const formService = {
 
     if (submissionError) throw submissionError;
 
-    const { error: specificError } = await supabase
+    const { error: specificError } = await client
       .from('form_agentes_ia')
       .insert([{ submission_id: submission.id, ...specificData }]);
 
@@ -98,7 +106,8 @@ export const formService = {
     baseData: FormSubmissionData,
     specificData: SitesFormData
   ) {
-    const { data: submission, error: submissionError } = await supabase
+    const client = getClient();
+    const { data: submission, error: submissionError } = await client
       .from('form_submissions')
       .insert([baseData])
       .select()
@@ -106,7 +115,7 @@ export const formService = {
 
     if (submissionError) throw submissionError;
 
-    const { error: specificError } = await supabase
+    const { error: specificError } = await client
       .from('form_sites')
       .insert([{ submission_id: submission.id, ...specificData }]);
 
@@ -119,7 +128,8 @@ export const formService = {
     baseData: FormSubmissionData,
     specificData: SistemasFormData
   ) {
-    const { data: submission, error: submissionError } = await supabase
+    const client = getClient();
+    const { data: submission, error: submissionError } = await client
       .from('form_submissions')
       .insert([baseData])
       .select()
@@ -127,7 +137,7 @@ export const formService = {
 
     if (submissionError) throw submissionError;
 
-    const { error: specificError } = await supabase
+    const { error: specificError } = await client
       .from('form_sistemas')
       .insert([{ submission_id: submission.id, ...specificData }]);
 
@@ -140,7 +150,8 @@ export const formService = {
     baseData: FormSubmissionData,
     specificData: EcommerceFormData
   ) {
-    const { data: submission, error: submissionError } = await supabase
+    const client = getClient();
+    const { data: submission, error: submissionError } = await client
       .from('form_submissions')
       .insert([baseData])
       .select()
@@ -148,7 +159,7 @@ export const formService = {
 
     if (submissionError) throw submissionError;
 
-    const { error: specificError } = await supabase
+    const { error: specificError } = await client
       .from('form_ecommerces')
       .insert([{ submission_id: submission.id, ...specificData }]);
 
