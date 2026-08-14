@@ -72,9 +72,9 @@ export default function Header() {
       {open && (
         <nav id="mobile-navigation" className="mobile-nav" aria-label="Navegação móvel">
           <div className="site-shell mobile-nav-inner">
-            {navigation.map((item, index) => (
+            {navigation.map((item) => (
               <Link key={item.path} to={item.path} className="mobile-nav-link" onClick={() => setOpen(false)}>
-                <span>0{index + 1}</span> {item.label}
+                {item.label}
               </Link>
             ))}
             <a href="https://hub.eria.tec.br" className="button button-primary mobile-nav-cta">

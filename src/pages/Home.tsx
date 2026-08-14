@@ -1,5 +1,4 @@
 import {
-  ArrowDownRight,
   ArrowRight,
   ArrowUpRight,
   Bot,
@@ -121,12 +120,10 @@ export default function Home() {
             <div className="map-node node-support"><Headphones /><span>Suportar</span></div>
           </div>
         </div>
-        <div className="hero-index site-shell"><span>01</span><ArrowDownRight size={18} /><span>ECOSSISTEMA ER.IA</span></div>
       </section>
 
       <section className="manifest-section">
         <div className="site-shell manifest-grid">
-          <p className="section-number">02 / A IDEIA</p>
           <div>
             <h2>Seu cliente não enxerga departamentos. Ele enxerga uma empresa.</h2>
             <p>Por isso, seus sistemas também precisam conversar. Uma informação capturada no atendimento pode virar proposta, contrato, tarefa e suporte sem começar tudo de novo.</p>
@@ -146,11 +143,11 @@ export default function Home() {
             <p>Comece pelo problema mais urgente. Conecte os outros produtos quando fizer sentido.</p>
           </div>
           <div className="product-grid">
-            {products.map((product, index) => {
+            {products.map((product) => {
               const Icon = product.icon;
               const content = (
                 <>
-                  <div className="product-top"><span>0{index + 1}</span><span className={product.live ? 'status live' : 'status'}>{product.status}</span></div>
+                  <div className="product-top"><span className={product.live ? 'status live' : 'status'}>{product.status}</span></div>
                   <Icon className="product-icon" />
                   <p className="product-label">{product.label}</p>
                   <h3>{product.name}</h3>
@@ -199,9 +196,9 @@ export default function Home() {
             <p>A ER.IA também desenha tecnologia específica para processos e oportunidades únicas.</p>
           </div>
           <div className="service-list">
-            <Link to="/sites"><span>01</span><PanelsTopLeft /><div><strong>Sites e e-commerce</strong><p>Presença digital que comunica, convence e converte.</p></div><ArrowUpRight /></Link>
-            <Link to="/sistemas"><span>02</span><Workflow /><div><strong>Sistemas personalizados</strong><p>Software moldado ao fluxo real da operação.</p></div><ArrowUpRight /></Link>
-            <Link to="/agentes-ia"><span>03</span><Bot /><div><strong>Agentes de IA</strong><p>Automação com contexto, regras e objetivos claros.</p></div><ArrowUpRight /></Link>
+            <Link to="/sites"><PanelsTopLeft /><div><strong>Sites e e-commerce</strong><p>Presença digital que comunica, convence e converte.</p></div><ArrowUpRight /></Link>
+            <Link to="/sistemas"><Workflow /><div><strong>Sistemas personalizados</strong><p>Software moldado ao fluxo real da operação.</p></div><ArrowUpRight /></Link>
+            <Link to="/agentes-ia"><Bot /><div><strong>Agentes de IA</strong><p>Automação com contexto, regras e objetivos claros.</p></div><ArrowUpRight /></Link>
           </div>
         </div>
       </section>

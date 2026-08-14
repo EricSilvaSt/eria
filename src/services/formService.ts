@@ -1,12 +1,3 @@
-import { supabase } from '../lib/supabase';
-
-const getClient = () => {
-  if (!supabase) {
-    throw new Error('O formulário está temporariamente indisponível. Fale conosco pelo WhatsApp.');
-  }
-  return supabase;
-};
-
 export interface FormSubmissionData {
   service_type: 'agentes_ia' | 'sites' | 'sistemas' | 'ecommerce';
   nome_empresa: string;
@@ -79,92 +70,26 @@ export interface EcommerceFormData {
   observacoes?: string;
 }
 
+type Details = AgentesIAFormData | SitesFormData | SistemasFormData | EcommerceFormData;
+
+async function submit(baseData: FormSubmissionData, details: Details) {
+  const response = await fetch('/api/form-submission', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ baseData, details }),
+  });
+  const result = await response.json().catch(() => null) as { error?: string; submission?: unknown } | null;
+
+  if (!response.ok) {
+    throw new Error(result?.error || 'Não foi possível enviar o formulário. Tente novamente.');
+  }
+
+  return result?.submission;
+}
+
 export const formService = {
-  async submitAgentesIAForm(
-    baseData: FormSubmissionData,
-    specificData: AgentesIAFormData
-  ) {
-    const client = getClient();
-    const { data: submission, error: submissionError } = await client
-      .from('form_submissions')
-      .insert([baseData])
-      .select()
-      .single();
-
-    if (submissionError) throw submissionError;
-
-    const { error: specificError } = await client
-      .from('form_agentes_ia')
-      .insert([{ submission_id: submission.id, ...specificData }]);
-
-    if (specificError) throw specificError;
-
-    return submission;
-  },
-
-  async submitSitesForm(
-    baseData: FormSubmissionData,
-    specificData: SitesFormData
-  ) {
-    const client = getClient();
-    const { data: submission, error: submissionError } = await client
-      .from('form_submissions')
-      .insert([baseData])
-      .select()
-      .single();
-
-    if (submissionError) throw submissionError;
-
-    const { error: specificError } = await client
-      .from('form_sites')
-      .insert([{ submission_id: submission.id, ...specificData }]);
-
-    if (specificError) throw specificError;
-
-    return submission;
-  },
-
-  async submitSistemasForm(
-    baseData: FormSubmissionData,
-    specificData: SistemasFormData
-  ) {
-    const client = getClient();
-    const { data: submission, error: submissionError } = await client
-      .from('form_submissions')
-      .insert([baseData])
-      .select()
-      .single();
-
-    if (submissionError) throw submissionError;
-
-    const { error: specificError } = await client
-      .from('form_sistemas')
-      .insert([{ submission_id: submission.id, ...specificData }]);
-
-    if (specificError) throw specificError;
-
-    return submission;
-  },
-
-  async submitEcommerceForm(
-    baseData: FormSubmissionData,
-    specificData: EcommerceFormData
-  ) {
-    const client = getClient();
-    const { data: submission, error: submissionError } = await client
-      .from('form_submissions')
-      .insert([baseData])
-      .select()
-      .single();
-
-    if (submissionError) throw submissionError;
-
-    const { error: specificError } = await client
-      .from('form_ecommerces')
-      .insert([{ submission_id: submission.id, ...specificData }]);
-
-    if (specificError) throw specificError;
-
-    return submission;
-  },
+  submitAgentesIAForm: submit,
+  submitSitesForm: submit,
+  submitSistemasForm: submit,
+  submitEcommerceForm: submit,
 };

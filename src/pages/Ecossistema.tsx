@@ -28,11 +28,10 @@ export default function Ecossistema() {
         </div>
       </section>
       <section className="ecosystem-list site-shell">
-        {apps.map((app, index) => {
+        {apps.map((app) => {
           const Icon = app.icon;
           return (
             <article id={app.id} className="ecosystem-row" key={app.name}>
-              <div className="ecosystem-index">0{index + 1}</div>
               <div className="ecosystem-icon"><Icon /></div>
               <div className="ecosystem-copy"><p>{app.eyebrow}</p><h2>{app.name}</h2><span className={app.status === 'Disponível' ? 'status live' : 'status'}>{app.status}</span></div>
               <div className="ecosystem-detail"><p>{app.description}</p><strong>{app.allowance}</strong>{'href' in app && app.href ? <a href={app.href}>Acessar agora <ArrowUpRight size={16} /></a> : <span>Novidades em breve <ArrowRight size={16} /></span>}</div>

@@ -58,7 +58,7 @@ export default function ServicePage({
       <section className="capabilities-section site-shell">
         <div className="section-heading"><div><p className="eyebrow">ENTREGA</p><h2>Tecnologia com intenção.</h2></div><p>Cada decisão precisa responder a uma necessidade do negócio, não apenas preencher uma lista de funcionalidades.</p></div>
         <div className="capabilities-grid">
-          {capabilities.map((item, index) => <article key={item.title}><span>0{index + 1}</span><h3>{item.title}</h3><p>{item.description}</p></article>)}
+          {capabilities.map((item) => <article key={item.title}><h3>{item.title}</h3><p>{item.description}</p></article>)}
         </div>
       </section>
 
@@ -67,7 +67,7 @@ export default function ServicePage({
           <p className="eyebrow light">COMO TRABALHAMOS</p>
           <h2>Clareza antes do código.</h2>
           <div className="process-grid">
-            {process.map((item, index) => <article key={item.title}><span>0{index + 1}</span><h3>{item.title}</h3><p>{item.description}</p></article>)}
+            {process.map((item) => <article key={item.title}><h3>{item.title}</h3><p>{item.description}</p></article>)}
           </div>
           <Link to={formPath} className="button button-light">Começar meu projeto <ArrowRight size={17} /></Link>
         </div>
