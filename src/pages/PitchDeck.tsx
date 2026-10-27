@@ -3,7 +3,6 @@ import {
   ArrowDown,
   ArrowLeft,
   ArrowRight,
-  ArrowUpLeft,
   ArrowUpRight,
   AudioLines,
   BellRing,
@@ -186,15 +185,16 @@ function PitchDeck() {
               <p className="pitch-eyebrow"><span /> PITCH DECK INSTITUCIONAL</p>
               <h1>Inteligência que <em>transforma</em> negócios.</h1>
               <p className="pitch-cover-subtitle">Ecossistema de tecnologia, SaaS integrado e soluções sob medida.</p>
-              <button className="pitch-cta" type="button" onClick={() => goToSlide(1)}>
-                Conheça a ER.IA <ArrowRight size={17} />
-              </button>
-              {showStartHint && activeSlide === 0 && (
-                <span className="pitch-start-hint">
-                  <ArrowUpLeft size={23} />
-                  Clique para começar
-                </span>
-              )}
+              <div className="pitch-cta-row">
+                <button className="pitch-cta" type="button" onClick={() => goToSlide(1)}>
+                  Conheça a ER.IA <ArrowRight size={17} />
+                </button>
+                {showStartHint && activeSlide === 0 && (
+                  <span className="pitch-start-hint" aria-hidden="true">
+                    <ArrowLeft />
+                  </span>
+                )}
+              </div>
             </div>
             <div className="pitch-cover-art" aria-hidden="true">
               <div className="pitch-cover-orbit orbit-outer" />
