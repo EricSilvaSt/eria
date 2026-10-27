@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { CookieConsentProvider } from './contexts/CookieConsentContext';
 import Header from './components/Header';
@@ -19,6 +19,37 @@ import FormSistemas from './pages/FormSistemas';
 import FormEcommerce from './pages/FormEcommerce';
 import Ecossistema from './pages/Ecossistema';
 import NotFound from './pages/NotFound';
+import PitchDeck from './pages/PitchDeck';
+
+function AppContent() {
+  const { pathname } = useLocation();
+  const isPitchDeck = pathname === '/pitch_deck';
+
+  return (
+    <div className="min-h-screen">
+      {!isPitchDeck && <Header />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/sobre" element={<Sobre />} />
+        <Route path="/ecossistema" element={<Ecossistema />} />
+        <Route path="/sites" element={<Sites />} />
+        <Route path="/sistemas" element={<Sistemas />} />
+        <Route path="/agentes-ia" element={<AgentesIA />} />
+        <Route path="/politica-cookies" element={<CookiePolicy />} />
+        <Route path="/politica-privacidade" element={<PrivacyPolicy />} />
+        <Route path="/form-agentes-ia" element={<FormAgentesIA />} />
+        <Route path="/form-sites-e-lp" element={<FormSites />} />
+        <Route path="/form-sistemas-personalizados" element={<FormSistemas />} />
+        <Route path="/form-ecommerces" element={<FormEcommerce />} />
+        <Route path="/pitch_deck" element={<PitchDeck />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      {!isPitchDeck && <Footer />}
+      <CookieBanner />
+      <CookieSettings />
+    </div>
+  );
+}
 
 function App() {
   return (
@@ -26,27 +57,7 @@ function App() {
       <ThemeProvider>
         <CookieConsentProvider>
           <ScrollToTop />
-          <div className="min-h-screen">
-            <Header />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/sobre" element={<Sobre />} />
-              <Route path="/ecossistema" element={<Ecossistema />} />
-              <Route path="/sites" element={<Sites />} />
-              <Route path="/sistemas" element={<Sistemas />} />
-              <Route path="/agentes-ia" element={<AgentesIA />} />
-              <Route path="/politica-cookies" element={<CookiePolicy />} />
-              <Route path="/politica-privacidade" element={<PrivacyPolicy />} />
-              <Route path="/form-agentes-ia" element={<FormAgentesIA />} />
-              <Route path="/form-sites-e-lp" element={<FormSites />} />
-              <Route path="/form-sistemas-personalizados" element={<FormSistemas />} />
-              <Route path="/form-ecommerces" element={<FormEcommerce />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-            <Footer />
-            <CookieBanner />
-            <CookieSettings />
-          </div>
+          <AppContent />
         </CookieConsentProvider>
       </ThemeProvider>
     </Router>
